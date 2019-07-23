@@ -23,11 +23,23 @@
 
 - Shokriら(2017)の攻撃者の仮定は2つある。1. 攻撃者は target model と同じ構造をした shadow model を複数作る必要がある。shadow modelの訓練に同じMLaaSを使うことがこのシチュエーションにあたる。2. shadow models の訓練に使用するデータセットの従う分布が訓練データの従う分布に等しい。2番目の仮定を緩和するためにShokriらは人工的にデータ生成を行う手法も提案している。効率の点から、実際の実験では2値表現のデータセットについて適用している。
 
-- 2つの仮定がとても強い。この論文では、攻撃者の仮定を緩め、より広い状況で攻撃が可能であることを示す。実際にはより弱い仮定で攻撃が可能で、それを防ぐための2つのメカニズムを提案する。
+- 2つの仮定がとても強い。この論文では、攻撃者の仮定を緩め、より広い状況で攻撃が可能であることを示す。実際にはより弱い仮定で攻撃が可能で、それを防ぐための2つのメカニズムを提案する。このように攻撃者の仮定を緩める（TABLE1）。
 
-### Membership Inference Attack
+### Membership Inference Attack.
 
-### Defence
+- shadow models の訓練データ・そのデザインに基づいた3種類の攻撃者を研究する。モデル・データに依存しない攻撃者まで考える。
+
+- Adversary 1. : target model の訓練データの従う分布と同じ分布に従うデータを持つ。shadow models の仮定を緩和する。
+
+- 複数のshadow modelsではなく、target model のふるまいを模倣するモデルをたった1つ学習する。MLaaSではモデルの学習にお金がかかるため、shadow modelを1つにすることは、membership inference attack のコストを下げる。
+
+- 様々なデータセットを通した実験評価によって、1つのshadow model, attack modelでもShokriらと同程度の攻撃が成功した。target model CNNがCIFAR-100で学習したとき、単純化した我々の攻撃が0.95 precision, 0.95 recallとなった(10 shadow models, 100 attack models)。既存(Shokriら, 2017)では0.95 precision, 0.94 recallであった。
+
+- shadow model が target model と同様に構成されるという仮定を緩和した。異なる構造・パラメータで学習しているが同水準の攻撃を達成。target model がどのML model の構造か知らなくとも攻撃できる shadow model training の方法を提案する。
+
+- Adversary2: 
+
+### Defense.
 
 ## PRELIMINARIES
 
