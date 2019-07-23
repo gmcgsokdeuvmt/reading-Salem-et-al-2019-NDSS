@@ -31,13 +31,15 @@
 
 - Adversary 1. : target model の訓練データの従う分布と同じ分布に従うデータを持つ。shadow models の仮定を緩和する。
 
-- 複数のshadow modelsではなく、target model のふるまいを模倣するモデルをたった1つ学習する。MLaaSではモデルの学習にお金がかかるため、shadow modelを1つにすることは、membership inference attack のコストを下げる。
+  - 複数のshadow modelsではなく、target model のふるまいを模倣するモデルをたった1つ学習する。MLaaSではモデルの学習にお金がかかるため、shadow modelを1つにすることは、membership inference attack のコストを下げる。
 
-- 様々なデータセットを通した実験評価によって、1つのshadow model, attack modelでもShokriらと同程度の攻撃が成功した。target model CNNがCIFAR-100で学習したとき、単純化した我々の攻撃が0.95 precision, 0.95 recallとなった(10 shadow models, 100 attack models)。既存(Shokriら, 2017)では0.95 precision, 0.94 recallであった。
+  - 様々なデータセットを通した実験評価によって、1つのshadow model, attack modelでもShokriらと同程度の攻撃が成功した。target model CNNがCIFAR-100で学習したとき、単純化した我々の攻撃が0.95 precision, 0.95 recallとなった(10 shadow models, 100 attack models)。既存(Shokriら, 2017)では0.95 precision, 0.94 recallであった。
 
-- shadow model が target model と同様に構成されるという仮定を緩和した。異なる構造・パラメータで学習しているが同水準の攻撃を達成。target model がどのML model の構造か知らなくとも攻撃できる shadow model training の方法を提案する。
+  - shadow model が target model と同様に構成されるという仮定を緩和した。異なる構造・パラメータで学習しているが同水準の攻撃を達成。target model がどのML model の構造か知らなくとも攻撃できる shadow model training の方法を提案する。
 
-- Adversary2: 
+- Adversary2: target modelの訓練データの従う分布と同じ分布に従うデータを持たないと仮定する。target model の構造も知らない。1つ前よりも現実的な設定である。
+
+  - 
 
 ### Defense.
 
