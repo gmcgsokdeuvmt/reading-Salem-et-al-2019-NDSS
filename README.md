@@ -51,7 +51,20 @@
 
 ### Defense.
 
+- membership risks を和らげるため、2つのdefense mechanismsを提案する。(dropout, model stacking)
 
+- Dropout: なぜmembership inferense attacks がうまくいくのか。1つは機械学習が持つ過学習の性質による。学習したデータ点はほかのクラスと比較して高い posterior を持つ。防ぐためには、 overfitting を防ぐdropout を用いる。deep learning の文脈で用いられる。
+
+  - cifar-100 の実験では、0.5 dropout によって、0.95 precision, 0.95 recall を0.61, 0.60にそれぞれ下げることができた。target model のacuracy は0.22から0.21にしか下がっていない。他のデータセットでもうまく防げる。
+  
+- Model stacking: dropout はdeep neural networkに依存する。nidek stacking は、アンサンブル学習のメジャー分野である。階層的に複数のML models を組み合わせることで、過学習を防ぐ。本研究では、target modelを構成する。3つの機械学習モデルに対して。2つのモデルは直接データを入力にとる。3つ目のモデルは最初の2つのモデルのposteriorから学習する。
+
+  - extensive に実験を行い、 model stackingは攻撃のパフォーマンスを落とすことを示した。CIFAR-100でprecision,recallを３０％以上落とした。target model の予測精度は維持されている。
+
+- summary: 
+  - 攻撃者の仮定を緩めて membership inference attacks のクラスを広げた。
+  - 3つの攻撃者を考え、モデル・データに依存しない攻撃者まで考えた。実験は 機械学習モデルが持つ 厳しい membership privacy 脅威を示す
+  - 2つの防御手法を示す（dropout, model stacking）実験的に効果があることを示す。
 
 ## PRELIMINARIES
 
