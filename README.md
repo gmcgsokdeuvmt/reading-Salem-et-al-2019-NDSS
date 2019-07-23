@@ -19,3 +19,10 @@
 - 8つのデータセットを使用して、提案するドメインを超えた攻撃が可能であることを示す。
 
 - 加えて、防御手法を提案する。MLモデルの有用性を高く維持しつつ広く membership inference attack を防ぐ。
+
+## INTRODUCTION
+
+- 機械学習が熱い流れで MLaaS が熱い。MLaaS はユーザがデータセットを投入すれば訓練されたMLモデルが返ってくるblack-boxAPIである。
+- MLモデルに対してセキュリティ・プライバシー攻撃を行う例がある（model inversion, adverserial examples, model extraction）。
+- 特に membership inference attack に注目する。あるデータ点が訓練に使用されたか否かを推定する。
+- 攻撃例: 特定の病気にかかった人を対象に学習したモデルがあった場合、ある人のデータ点が訓練に使用されたか否かを推定することでその人の病気がわかってしまう。
