@@ -39,9 +39,19 @@
 
 - Adversary2: target modelの訓練データの従う分布と同じ分布に従うデータを持たないと仮定する。target model の構造も知らない。1つ前よりも現実的な設定である。
 
-  - 
+  - この設定において、 data transferring attack を提案する。1 shadow model で異なるデータセットを学習する。target model のふるまいを模倣するわけではない。単純にデータ点が訓練されているか否かを把握する。
+  
+  - data transferring attack によって、攻撃者はtarget model にクエリを投げてわざわざデータ生成する必要がない。既存研究(Shokri et al , 2017)では1つのデータを生成するのに平均156回のクエリを必要とするなど、我々の攻撃手法が効率的であることがわかる。クエリが少ないのだからMLaaS provider にも検知されにくい。
+  
+  - 実験結果により、mebership inference attack が依然成功することがわかる。few percentage のdrop。全く異なるデータセットでも攻撃が成功することもわかった。20 News groups 訓練モデルを CIFAR-100が画像データセットを使って 0.94 precision, 0.93 recallの攻撃を行った。
+  
+- Adversary 3: shadow models を用いない。target data points を target model にクエリしたときに得られる posterior にのみ依存する。訓練手続きが必要ない。target model の posterior 上の maximum and entropyを用いる。これはデータ点をtraining かnon-trainingかを十分に分離できる。具体的な攻撃手法とするため、閾値を選択する方法を提案する。実験は単純な攻撃でも複数のデータセット上で効率よく攻撃できることを示す。
+
+- これらすべての実験ではmembership inference が単純かつ効率的にできることを示す。ML models にとって厳しいリスクであることを実証する。
 
 ### Defense.
+
+
 
 ## PRELIMINARIES
 
