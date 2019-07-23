@@ -29,3 +29,90 @@
 
 ### Defence
 
+## PRELIMINARIES
+
+### A. Membership Inference Against Machine Learning Models
+
+### B. Datasets Description
+
+#### News.
+
+#### Face.
+
+## TOWARDS MODEL INDEPENDENT MEMBERSHIP INFERENCE ATTACKS (ADVERSARY 1)
+
+### A. Threat Model
+
+### B. One Shadow Model
+
+#### Methodology.
+
+#### Experimental Setup.
+
+#### Results.
+
+#### Evaluation on MLaaS
+
+### C. Target Model Structure
+
+#### Hyperparameters.
+
+#### Target Model’s Algorithm.
+
+## TOWARDS DATA INDEPENDENT MEMBERSHIP INFERENCE ATTACKS (ADVERSARY 2)
+
+### A. Threat Model
+
+### B. Methodology
+
+### C. Evaluation
+
+#### Experimental Setup.
+
+#### Results.
+
+#### Reasoning.
+
+### D. Evaluation On MLaaS
+
+## MODEL AND DATA INDEPENDENT MEMBERSHIP INFERENCE ATTACK WITHOUT TRAINING (ADVERSARY 3)
+
+### A. Threat Model
+
+### B. Methodology
+
+#### Threshold Choosing.
+
+### C. Evaluation
+
+#### Experimental Setup.
+
+#### Results.
+
+### D. Comparison of the Three Attacks
+
+## D. Comparison of the Three Attacks
+
+### A. Dropout
+
+#### Methodology.
+
+#### Evaluation.
+
+### B. Model Stacking
+
+#### Methodology.
+
+#### Evaluation.
+
+## RELATED WORK
+
+#### Membership Inference. 
+
+#### Membership Inference Against Machine Learning.
+
+#### Attacks Against Machine Learning.
+
+#### Privacy-Preserving Machine Learning. 
+
+## CONCLUSION
